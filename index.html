@@ -64,9 +64,14 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project solves SDG goal 4 which is Quality Education by providing an interacting and enjoyable way of improving your math skills through technology.This develops mental calculation speed and problem solving skills while enabling people to practice math at their own pace. The <strong Arduino uno controls the game and processes the players amswers. The </tromg> </strong> <strong></strong Breadboard is used to connect the components without soldering it. The ></strong> LED lights are used to indicate the correct and wrong answers. The 
-
+    <p>This project is a gamified math learning system built around an Arduino microcontrolle desisgned to solve SDG goal 4 which is Quality Education by providing an interactive and enjoyable way of improving your math skills through technology. 
+       Users can select custom arithmetic operations and difficulty tiers, solve generated problems via a physical keypad, and receive immediate visual and auditory feedback.This develops mental calculation speed and problem solving skills while enabling people to practice math at their own pace. 
     </p>
+    The main goal of this project is to create engaging skill practice through four different operations: addition, subtraction, multiplication, and division across 10 questions. It even allows a customized experience by allowing users to choose from four different difficulities (Easy, Medium, Hard, Extreme), that change the amount of numbers and operations involed and the scale of the numbers. The system is designed to be user-friendly and accessible, making it suitable for learners of all ages.
+    Another goal is to make sure the feedback is immediate and clear, for example, when a user inputs an answer correctly, a green LED lights up and a passive buzzer plays a high pitch tone, while a wrong answer triggers a red LED and a low pitch tone. This immediate feedback helps users quickly understand their performance and encourages them to keep practicing.
+  </p>
+    One of the major concerns for this project is the pin limitations of the Arduino Uno, which has a limited number of digital and analog pins. This requires careful planning and efficient use of available pins to accommodate the keypad, LEDs, buzzer, and any other components. Additionally, the system must be designed to handle user input effectively, ensuring that the keypad is responsive and that the system can process inputs quickly to provide real time feedback.
+    One of the more math issues for this project is the random generation of division problems, which must make sure that the divisor is not zero and that the result is a whole number. This requires implenting logic to generate valid division problems that are still challenging for the user, while remaning possible for this project.
   </section>
 
   <section id="circuit-diagram">
@@ -314,6 +319,10 @@ Math Quiz Game using an Arduino with LCD | TinkerCad.</em>
 </section>
 
 
+
+</body>
+
+</html>
 
 </body>
 
