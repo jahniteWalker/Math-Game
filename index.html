@@ -1,0 +1,325 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Game</title>
+
+  <!-- Prism.js syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+
+  <!-- Includes the stylesheet file styles.css -->
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<script>
+  window.addEventListener("beforeprint", () => {
+    const proto = document.getElementById("prototypeImage");
+    const printHeroImg = document.querySelector("#print-hero img");
+
+    if (proto && printHeroImg) {
+      printHeroImg.src = proto.src;
+    }
+  });
+</script>
+
+
+<body>
+  <!-- Fixed Navigation Menu -->
+  <nav id="menu">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#top">Title</a></li>
+      <li><a href="#information">Project Information</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#circuit-diagram">Circuit</a></li>
+      <li><a href="#environment">Environment</a></li>
+      <li><a href="#bom">BoM</a></li>
+      <li><a href="#prototype">Prototype</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </nav>
+ <button class="print-button" onclick="window.print()" style="position: fixed; bottom: 24px; right: 24px; padding: 10px 16px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-size: 0.9rem; z-index: 2000;">  Print This Page </button>
+
+  <h1 id="top">Math Game</h1>
+<div id="print-hero">
+    <img src="" alt="">
+</div>
+
+  <section id="information">
+    <h2>Project Information</h2>
+    <p><strong>Course:</strong> TECH 117 (Computer Engineering Technology, Fall 2026)</p>
+    <p><strong>Instructor:</strong> Ph.D. Ana Rodrigues</p>
+    <p><strong>Team Members:</strong></p>
+    <ul>
+      <li>Jahnite Walker</li>
+      <li>Oluwamurewa Adebowale</li>
+    </ul>
+  </section>
+
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>This project is a gamified math learning system built around an Arduino microcontroller desisgned to solve SDG goal 4 which is Quality Education by providing an interactive and enjoyable way of improving your math skills through technology. 
+       Users can select custom arithmetic operations and difficulty tiers, solve generated problems via a physical keypad, and receive immediate visual and auditory feedback.This develops mental calculation speed and problem solving skills while enabling people to practice math at their own pace. 
+    </p>
+    The main goal of this project is to create engaging skill practice through four different operations: addition, subtraction, multiplication, and division across 10 questions. It even allows a customized experience by allowing users to choose from four different difficulities (Easy, Medium, Hard, Extreme), that change the amount of numbers and operations involed and the scale of the numbers. The system is designed to be user-friendly and accessible, making it suitable for learners of all ages.
+    Another goal is to make sure the feedback is immediate and clear, for example, when a user inputs an answer correctly, a green LED lights up and a passive buzzer plays a high pitch tone, while a wrong answer triggers a red LED and a low pitch tone. This immediate feedback helps users quickly understand their performance and encourages them to keep practicing.
+  </p>
+    One of the major concerns for this project is the pin limitations of the Arduino Uno, which has a limited number of digital and analog pins. This requires careful planning and efficient use of available pins to accommodate the keypad, LEDs, buzzer, and any other components. Additionally, the system must be designed to handle user input effectively, ensuring that the keypad is responsive and that the system can process inputs quickly to provide real time feedback.
+    One of the more math issues for this project is the random generation of division problems, which must make sure that the divisor is not zero and that the result is a whole number. This requires implenting logic to generate valid division problems that are still challenging for the user, while remaning possible for this project.
+  </section>
+
+  <section id="circuit-diagram">
+    <h2>Circuit Diagram</h2>
+    <p>The ultrasonic sensor measures distance; the Arduino activates LEDs and the buzzer according to distance
+      thresholds.</p>
+    <img src="math-game-Arduino.jpg" alt="Arduino math game">
+  </section>
+
+  <section id="environment">
+    <h2>Environmental Impact Assessment</h2>
+    <ul>
+      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances.
+      </li>
+      <li><strong>Energy Efficiency:</strong> The circuit draws minimal power (~50 mA at 5V), ideal for USB or
+        solar power.</li>
+      <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste.</li>
+      <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize
+        carbon footprint.</li>
+    </ul>
+  </section>
+
+  <section id="bom">
+    <h2>Bill of Materials (BoM)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Subtotal</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arduino Uno Rev3</td>
+          <td>1</td>
+          <td>$27.60</td>
+          <td>$27.60</td>
+          <td><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3">Arduino Store</a></td>
+        </tr>
+        <tr>
+          <td>4x4 Matrix Keypad Membrane</td>
+          <td>1</td>
+          <td>$3.95</td>
+          <td>$3.95</td>
+          <td><a href="https://www.pishop.ca/product/4x4-matrix-keypad-membrane/">PiShop</a></td>
+        </tr>
+        <tr>
+          <td>Passive Buzzer</td>
+          <td>1</td>
+          <td>$0.95</td>
+          <td>$0.95</td>
+          <td><a href="https://www.sparkfun.com/passive-buzzer-module.html">SparkFun</a></td>
+        </tr>
+        <tr>
+          <td>LEDs (Red and Green)</td>
+          <td>2</td>
+          <td>$0.38</td>
+          <td>$0.76</td>
+          <td><a href="https://www.digikey.ca/en/products/detail/w-rth-elektronik/151051SS04000/7315767">DigiKey</a></td>
+        </tr>
+        <tr>
+          <td>220 Ω Resistors</td>
+          <td>3</td>
+          <td>$0.03</td>
+          <td>$0.09</td>
+          <td>Adafruit</td>
+        </tr>
+        <tr>
+          <td>Breadboard</td>
+          <td>1</td>
+          <td>$4.95</td>
+          <td>$4.95</td>
+          <td><a href="https://www.adafruit.com/product/64">Adafruit</a></td>
+        </tr>
+        <tr>
+          <td>Jumper Wires</td>
+          <td>1 set</td>
+          <td>$3.50</td>
+          <td>$3.50</td>
+          <td><a href="https://www.sparkfun.com/jumper-wires-standard-7-m-m-30-awg-30-pack.html">SparkFun</a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Estimated Total</td>
+          <td>$41.64</td>
+          <td>—</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section id="prototype">
+    <h2>Prototype</h2>
+    <p>The following image shows the assembled prototype on a breadboard.</p>
+    <img  id="prototypeImage" src="prototype.jpg" alt="Collision warning system prototype">
+  </section>
+
+  <section id="code">
+    <h2>Arduino Code</h2>
+    <p>The following Arduino code controls the system, lighting LEDs and activating the buzzer based on distance readings from the HC-SR04 sensor.</p>
+<div class="code-container" style="position: relative;">
+      <button class="copy-btn" onclick="copyCode()" 
+              style="position:absolute; top:8px; right:8px; z-index:10;">
+          Copy
+      </button>
+
+      <pre class="line-numbers">
+ 
+  <code id="arduinoCode" class="language-cpp">
+// Collision Warning System with Distance Sensor (HC-SR04)
+// Author: Ana Rodrigues
+// Oct 2, 2025
+// Object is farther than 50cm: Green LED lights up
+// Object is closer than 50 cm, but more than 10cm away: Yellow LED lights, buzzer plays 300Hz tone
+// Object is closer than 10cm: Red LED lights up, buzzer plays 500Hz tone
+
+//LED pins
+const int greenLED = 2;
+const int yellowLED = 3;
+const int redLED = 4;
+
+// Ultrasonic sensor pins
+const int trigPin = 9;
+const int echoPin = 10;
+
+// Passive buzzer pin
+const int buzzer = 11;
+
+void setup() {
+  pinMode(greenLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(redLED, OUTPUT);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Measure distance
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  long duration = pulseIn(echoPin, HIGH);
+  long distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+  
+  //Error in measurement:
+  if (distance <= 0)
+    return;
+
+  //Too close:
+  if (distance <= 10) {
+    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(redLED, HIGH);
+    tone(buzzer, 500); // Play 500Hz tone
+    return;
+  }
+
+  //Midrange:
+  if (distance <= 30) {
+    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, HIGH);
+    digitalWrite(redLED, LOW);
+    tone(buzzer, 300); // Play 300Hz tone
+    return;
+  }
+
+  //Normal status:
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(redLED, LOW);
+  noTone(buzzer); // stop buzzer
+
+  delay(100);
+}
+    </code>
+  </pre>
+
+    <script>
+      function copyCode() {
+        const code = document.getElementById('arduinoCode').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          alert('Code copied to clipboard!');
+        });
+      }
+    </script>
+  </section>
+
+
+
+  <section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>The system effectively demonstrates distance-based alerting using Arduino. It’s affordable, educational, and
+      sustainable through reusable components.</p>
+  </section>
+
+ <section id="references">
+  <h2>References</h2>
+
+  <ul>
+    <li>
+      
+Circuit Basics (2023, April 27). 
+      <em>
+How to Set Up Keypads on the Arduino - Ultimate Guide to the Arduino #22.</em> 
+      Youtube. 
+      <a href="https://www.youtube.com/watch?v=DbUrUQvcsMg&t=1s" target="_blank" rel="noopener noreferrer">
+        https://www.youtube.com/watch?v=DbUrUQvcsMg&t=1s
+      </a>
+    </li>
+    <li>
+      Mariamalz (2021, January 7). 
+      <em>Arduino SpeedMath Game.</em> 
+      Arduino Project Hub. 
+      <a href="https://projecthub.arduino.cc/mariamalz/arduino-speedmath-game-6da118" target="_blank" rel="noopener noreferrer">
+        https://projecthub.arduino.cc/mariamalz/arduino-speedmath-game-6da118
+      </a>
+    </li>
+
+    <li>
+      
+THE ELECTRONIC GUY (2020, June 9). 
+      <em>
+Math Quiz Game using an Arduino with LCD | TinkerCad.</em> 
+      Youtube. 
+      <a href="https://www.youtube.com/watch?v=0Hv73ptb_QM" target="_blank" rel="noopener noreferrer">
+        https://www.youtube.com/watch?v=0Hv73ptb_QM
+      </a>
+    </li>
+
+   
+  </ul>
+</section>
+
+
+
+</body>
+
+</html>
